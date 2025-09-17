@@ -8,7 +8,8 @@ const restartButton = document.getElementById("restartButton");
 
 const levelElement = document.getElementById("level");
 const scoreElement = document.getElementById("score");
-const capitalElement = document.getElementById("capital");
+const momentumMeter = document.getElementById("momentumMeter");
+const momentumBars = momentumMeter ? Array.from(momentumMeter.querySelectorAll(".meter-bar")) : [];
 const objectivesList = document.getElementById("objectivesList");
 const logElement = document.getElementById("log");
 
@@ -260,6 +261,14 @@ function renderLog() {
     .join("");
 }
 
+function renderMomentum() {
+  if (!momentumMeter) return;
+  momentumMeter.setAttribute("aria-valuenow", String(state.capital));
+  momentumBars.forEach((bar, index) => {
+    bar.classList.toggle("active", index < state.capital);
+  });
+}
+
 function updateScoreboard(level = levels[Math.min(state.levelIndex, levels.length - 1)]) {
   if (level) {
     levelElement.textContent = `${level.name}\n${level.description}`;
@@ -267,7 +276,7 @@ function updateScoreboard(level = levels[Math.min(state.levelIndex, levels.lengt
     levelElement.textContent = "–";
   }
   scoreElement.textContent = state.score.toLocaleString();
-  capitalElement.textContent = state.capital > 0 ? "⚡".repeat(state.capital) : "🛑";
+  renderMomentum();
 }
 
 function updateObjectives(level) {
@@ -305,6 +314,7 @@ function startGame() {
   setTheme(level);
   updateScoreboard(level);
   updateObjectives(level);
+  renderMomentum();
   pushLog("Green light! Sprint through Foundation Dash to bank the core skills.");
   requestAnimationFrame(gameLoop);
 }
@@ -636,4 +646,4 @@ restartButton.addEventListener("click", () => {
 });
 
 // Provide an initial hint in the log even before the game starts.
-pushLog("Hit Start Race to launch Prisha's skills run and show how she outruns every rejection.");
+pushLog("Hit Start Race to launch Prisha's Skill Sprint and watch her outrun every rejection.");

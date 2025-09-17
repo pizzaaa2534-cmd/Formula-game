@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finance Kart: Skills Run</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Kart: Prisha&rsquo;s Skill Sprint</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
   <main class="app">
     <header class="topbar">
-      <h1>Finance Kart: Skills Run</h1>
+      <div class="identity">
+        <div class="avatar" aria-hidden="true">
+          <div class="avatar-figure">
+            <span class="visor"></span>
+            <span class="hair"></span>
+            <span class="suit"></span>
+          </div>
+        </div>
+        <div class="identity-copy">
+          <h1>Finance Kart: Prisha&rsquo;s Skill Sprint</h1>
+          <p>
+            Meet Prisha&mdash;the finance strategist sprinting past rejections to prove every capability she
+            brings to your team.
+          </p>
+        </div>
+      </div>
       <div class="controls">
         <button id="startButton" type="button">Start Race</button>
         <button id="pauseButton" type="button">Pause</button>
@@ -31,8 +46,22 @@
             <dd id="score">0</dd>
           </div>
           <div>
-            <dt>Momentum</dt>
-            <dd id="capital">⚡⚡⚡</dd>
+            <dt>Momentum Reserve</dt>
+            <dd>
+              <div
+                id="momentumMeter"
+                class="momentum-meter"
+                role="meter"
+                aria-label="Momentum reserve"
+                aria-valuemin="0"
+                aria-valuemax="3"
+                aria-valuenow="3"
+              >
+                <span class="meter-bar"></span>
+                <span class="meter-bar"></span>
+                <span class="meter-bar"></span>
+              </div>
+            </dd>
           </div>
         </dl>
       </article>
@@ -51,19 +80,196 @@
       <aside class="legend">
         <h2>Legend</h2>
         <ul>
-          <li><span class="icon coin"></span> Skill Tokens (collect to level up)</li>
-          <li><span class="icon hazard"></span> Rejection Hazards (dodge to keep momentum)</li>
+          <li>
+            <span class="icon coin"></span>
+            Skill Tokens &mdash; each one represents a finance skill Prisha can talk through in detail
+          </li>
+          <li>
+            <span class="icon hazard"></span>
+            Rejection Hazards &mdash; hiring setbacks that slow the kart if you collide
+          </li>
         </ul>
       </aside>
     </section>
 
+    <section class="experience-visuals" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience Visual Guide</h2>
+      <p class="experience-intro">
+        Each level card pairs a visual with the finance mission it represents so recruiters can scan what Prisha accomplished at
+        a glance.
+      </p>
+      <div class="experience-grid">
+        <article class="experience-card">
+          <header>
+            <h3>Level 1 &mdash; Foundation Dash</h3>
+            <p>Mayo College achievements that prime the kart.</p>
+          </header>
+          <div class="experience-visual" role="img" aria-label="Academics, leadership, community impact, and resilience">
+            <span class="token academics">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="10" y="14" width="20" height="36" rx="4" fill="currentColor"></rect>
+                <rect x="34" y="14" width="20" height="36" rx="4" fill="currentColor"></rect>
+                <line x1="30" y1="14" x2="34" y2="50" stroke="#0b0f19" stroke-width="2"></line>
+              </svg>
+              <span class="visually-hidden">Commerce, Accounting, Economics, and Maths mastery</span>
+            </span>
+            <span class="token leadership">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M20 12h24l-2 18H22l-2-18z" fill="currentColor"></path>
+                <rect x="28" y="30" width="8" height="10" rx="2" fill="#0b0f19"></rect>
+                <rect x="22" y="40" width="20" height="8" rx="3" fill="currentColor"></rect>
+              </svg>
+              <span class="visually-hidden">Leadership across finance societies and events</span>
+            </span>
+            <span class="token community">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="20" cy="24" r="9" fill="currentColor"></circle>
+                <circle cx="44" cy="24" r="9" fill="currentColor"></circle>
+                <path d="M14 36h36l-8 16H22z" fill="#0b0f19"></path>
+              </svg>
+              <span class="visually-hidden">Community and rural empowerment initiatives</span>
+            </span>
+            <span class="token resilience">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 12L18 24l14 28 14-28z" fill="currentColor"></path>
+                <circle cx="32" cy="26" r="6" fill="#0b0f19"></circle>
+              </svg>
+              <span class="visually-hidden">Yoga discipline that fuels resilience</span>
+            </span>
+          </div>
+          <ul class="experience-tasks">
+            <li>Mastered Commerce, Accounting, Economics, and Maths.</li>
+            <li>Directed 20+ finance events as Economics &amp; Commerce Society President.</li>
+            <li>Scaled social impact through Prayas Social Service and rural projects.</li>
+            <li>Competed at Yoga Nationals, doubling focus for pressure moments.</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <header>
+            <h3>Level 2 &mdash; Warwick Runway</h3>
+            <p>Scholarship wins and innovation sprints.</p>
+          </header>
+          <div class="experience-visual" role="img" aria-label="Scholarship, operations, stakeholder management, and Doctor AI">
+            <span class="token scholarship">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="12" y="18" width="40" height="30" rx="4" fill="currentColor"></rect>
+                <circle cx="24" cy="33" r="6" fill="#0b0f19"></circle>
+                <circle cx="40" cy="33" r="6" fill="#0b0f19"></circle>
+              </svg>
+              <span class="visually-hidden">Global Excellence Scholarship success</span>
+            </span>
+            <span class="token operations">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="14" y="12" width="36" height="40" rx="6" fill="currentColor"></rect>
+                <line x1="24" y1="22" x2="40" y2="22" stroke="#0b0f19" stroke-width="3"></line>
+                <line x1="20" y1="32" x2="44" y2="32" stroke="#0b0f19" stroke-width="3"></line>
+                <line x1="22" y1="42" x2="34" y2="42" stroke="#0b0f19" stroke-width="3"></line>
+              </svg>
+              <span class="visually-hidden">Operations management for Warwick India Forum</span>
+            </span>
+            <span class="token stakeholders">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="22" cy="26" r="8" fill="currentColor"></circle>
+                <circle cx="42" cy="26" r="8" fill="currentColor"></circle>
+                <path d="M18 42h28c0 6-6 10-14 10s-14-4-14-10z" fill="#0b0f19"></path>
+              </svg>
+              <span class="visually-hidden">Stakeholder relationships and VIP coordination</span>
+            </span>
+            <span class="token doctor-ai">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="18" y="12" width="28" height="40" rx="6" fill="currentColor"></rect>
+                <rect x="24" y="24" width="16" height="4" fill="#0b0f19"></rect>
+                <rect x="30" y="18" width="4" height="16" fill="#0b0f19"></rect>
+                <circle cx="32" cy="44" r="6" fill="#0b0f19"></circle>
+              </svg>
+              <span class="visually-hidden">Doctor AI healthcare innovation</span>
+            </span>
+          </div>
+          <ul class="experience-tasks">
+            <li>Earned the Warwick Global Excellence Scholarship valued at &pound;60,000.</li>
+            <li>Ran Warwick India Forum operations, including a 150+ attendee Forum Ball.</li>
+            <li>Coordinated VIP speakers and global partners for high-profile events.</li>
+            <li>Built the Doctor AI tool with clinicians to deliver rural healthcare insights.</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <header>
+            <h3>Level 3 &mdash; Internship Gauntlet</h3>
+            <p>Professional placements that sharpened her finance playbook.</p>
+          </header>
+          <div
+            class="experience-visual"
+            role="img"
+            aria-label="Analytics, marketing, sustainability, data, CSR, and expansion outcomes"
+          >
+            <span class="token analytics">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="14" y="34" width="8" height="16" fill="currentColor"></rect>
+                <rect x="28" y="26" width="8" height="24" fill="currentColor"></rect>
+                <rect x="42" y="18" width="8" height="32" fill="currentColor"></rect>
+                <polyline points="14,26 28,20 42,28" fill="none" stroke="#0b0f19" stroke-width="4"></polyline>
+              </svg>
+              <span class="visually-hidden">Market insight and analytics delivery</span>
+            </span>
+            <span class="token marketing">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <polygon points="16,20 44,32 16,44" fill="currentColor"></polygon>
+                <rect x="12" y="26" width="6" height="12" fill="#0b0f19"></rect>
+                <circle cx="48" cy="32" r="6" fill="#0b0f19"></circle>
+              </svg>
+              <span class="visually-hidden">Digital campaign acceleration</span>
+            </span>
+            <span class="token sustainability">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 14c-6 10-6 22 0 32 6-10 6-22 0-32z" fill="currentColor"></path>
+                <path d="M20 26c6 6 14 6 24 0" fill="none" stroke="#0b0f19" stroke-width="4"></path>
+              </svg>
+              <span class="visually-hidden">Sustainability strategy proposals</span>
+            </span>
+            <span class="token data">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="18" y="18" width="28" height="28" rx="6" fill="currentColor"></rect>
+                <rect x="28" y="14" width="8" height="6" rx="2" fill="#0b0f19"></rect>
+                <rect x="28" y="44" width="8" height="6" rx="2" fill="#0b0f19"></rect>
+                <rect x="14" y="28" width="6" height="8" rx="2" fill="#0b0f19"></rect>
+                <rect x="44" y="28" width="6" height="8" rx="2" fill="#0b0f19"></rect>
+              </svg>
+              <span class="visually-hidden">Data intelligence across AI and insurance</span>
+            </span>
+            <span class="token csr">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M20 30c0-6 4-10 12-10s12 4 12 10-4 10-12 18c-8-8-12-12-12-18z" fill="currentColor"></path>
+                <path d="M18 26c-4 0-6 4-6 7 0 6 8 10 20 20" fill="none" stroke="#0b0f19" stroke-width="4"></path>
+              </svg>
+              <span class="visually-hidden">CSR and wellbeing programme design</span>
+            </span>
+            <span class="token expansion">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <polygon points="32,12 18,52 32,42 46,52" fill="currentColor"></polygon>
+                <circle cx="32" cy="32" r="6" fill="#0b0f19"></circle>
+              </svg>
+              <span class="visually-hidden">Expansion analysis across telecom real estate</span>
+            </span>
+          </div>
+          <ul class="experience-tasks">
+            <li>Delivered product testing, analytics, and campaign lift for Pret India and Himachal Futuristics.</li>
+            <li>Drafted sustainability roadmaps for Blue Planet across 15 markets.</li>
+            <li>Named a top candidate at Allstate NI and strengthened AI and insurance knowledge.</li>
+            <li>Designed CSR programmes for Allnex and evaluated 90+ sites with Reliance Jio teams.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section class="how-to">
       <h2>How to Play</h2>
-      <p>
-        Steer Prisha’s finance kart with the <strong>left</strong> and <strong>right arrow keys</strong> or <strong>A / D</strong>.
-        Sweep up skill tokens to prove experience and accelerate through each career level.
-        Dodge rejection hazards—each one slows your momentum. Clear every run to deliver the Prisha Advantage finish.
-      </p>
+      <ol>
+        <li>Press <strong>Start Race</strong> to launch Prisha&rsquo;s kart onto the hiring track.</li>
+        <li>Use the <strong>left</strong> and <strong>right arrow keys</strong> (or <strong>A / D</strong>) to change lanes.</li>
+        <li>Collect skill tokens to unlock achievements from each career experience.</li>
+        <li>Dodge rejection hazards to protect the momentum reserve in the meter above.</li>
+        <li>Clear all three levels to reveal the full Prisha Advantage summary.</li>
+      </ol>
     </section>
   </main>
   <script src="game.js"></script>
