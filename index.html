@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Kart: Skills Run</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Finance Kart: Skills Run</h1>
+      <div class="controls">
+        <button id="startButton" type="button">Start Race</button>
+        <button id="pauseButton" type="button">Pause</button>
+        <button id="resumeButton" type="button">Resume</button>
+        <button id="restartButton" type="button">Restart</button>
+      </div>
+    </header>
+
+    <section class="dashboard">
+      <article class="scorecard">
+        <h2>Race Telemetry</h2>
+        <dl>
+          <div>
+            <dt>Level</dt>
+            <dd id="level">–</dd>
+          </div>
+          <div>
+            <dt>Skill Score</dt>
+            <dd id="score">0</dd>
+          </div>
+          <div>
+            <dt>Momentum</dt>
+            <dd id="capital">⚡⚡⚡</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="objectives">
+        <h2>Current Objectives</h2>
+        <ul id="objectivesList"></ul>
+      </article>
+      <article class="narrative">
+        <h2>Track Commentary</h2>
+        <div id="log" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section class="track">
+      <canvas id="gameCanvas" width="640" height="720" aria-label="Finance Kart skill run" role="img"></canvas>
+      <aside class="legend">
+        <h2>Legend</h2>
+        <ul>
+          <li><span class="icon coin"></span> Skill Tokens (collect to level up)</li>
+          <li><span class="icon hazard"></span> Rejection Hazards (dodge to keep momentum)</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="how-to">
+      <h2>How to Play</h2>
+      <p>
+        Steer Prisha’s finance kart with the <strong>left</strong> and <strong>right arrow keys</strong> or <strong>A / D</strong>.
+        Sweep up skill tokens to prove experience and accelerate through each career level.
+        Dodge rejection hazards—each one slows your momentum. Clear every run to deliver the Prisha Advantage finish.
+      </p>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
